@@ -2,12 +2,8 @@
 
 set -e
 
-# start logging
-service rsyslog start
-
 # enable IP forwarding
-echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
-
+sysctl -w net.ipv4.ip_forward=1
 sysctl -p
 
 # configure firewall
