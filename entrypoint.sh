@@ -14,3 +14,5 @@ iptables -I INPUT -s 10.99.99.0/24 -i ppp0 -j ACCEPT
 iptables --append FORWARD --in-interface eth0 -j ACCEPT
 
 exec "$@"
+
+exit 0
