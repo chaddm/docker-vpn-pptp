@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -e
-
 service rsyslog restart
 
 # enable IP forwarding
@@ -13,6 +11,4 @@ iptables --table nat --append POSTROUTING --out-interface ppp0 -j MASQUERADE
 iptables -I INPUT -s 10.99.99.0/24 -i ppp0 -j ACCEPT
 iptables --append FORWARD --in-interface eth0 -j ACCEPT
 
-exec "$@"
-
-exit 0
+pptpd --fg
