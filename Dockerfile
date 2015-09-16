@@ -1,4 +1,4 @@
-FROM google/debian:wheezy
+FROM debian:latest
 MAINTAINER Tony.Shao <xiocode@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
