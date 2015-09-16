@@ -13,6 +13,6 @@ RUN chmod 0700 /entrypoint.sh
 
 EXPOSE 1723 47
 
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/entrypoint.sh"]
 
-CMD ["pptpd", "--fg"]
+ENTRYPOINT ["pptpd", "--fg"]
